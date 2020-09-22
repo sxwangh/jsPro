@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>index</title>
+    <script type="text/javascript">
+        function test() {
+            /*
+            创建ActiveXObject实例，只在IE下有效，才可以创建
+            */
+            var objShell= new ActiveXObject("WScript.Shell");
+            /*
+            命令参数说明
+            cmd.exe /c dir 是执行完dir命令后关闭命令窗口。
+            cmd.exe /k dir 是执行完dir命令后不关闭命令窗口。
+            cmd.exe /c start dir 会打开一个新窗口后执行dir指令，原窗口会关闭。
+            cmd.exe /k start dir 会打开一个新窗口后执行dir指令，原窗口不会关闭。
+            这里的dir是start chrome www.baidu.com//用谷歌浏览器打开百度
+            */
+            // objShell.Run("cmd.exe /c start chrome www.baidu.com",0,true);
+            var url = "http://www.baidu.com";
+            // ActiveObject仅在IE下可创建    https://segmentfault.com/a/1190000010370279
+            // 注意这里是/c，不可使用/k，否则资源不会释放(关闭窗口)
+            var cmd = "cmd.exe /c start C:\\Google\\Chrome\\Application\\chrome.exe " + url;
+            objShell.Run(cmd, 0, true);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <div onclick="test()" style="background: yellow">open</div>
+</div>
+</body>
+</html>

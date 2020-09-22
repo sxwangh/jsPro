@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+        .div1 {
+            height: 200px;
+            width:200px;
+            background: bisque;
+            position: relative;
+        }
+        .div1::before {
+            content: "before...";
+            background: green;
+            position: absolute;
+            right: 0px;
+        }
+        .div1::after {
+            content: "...";
+            background: yellow;
+            position: absolute;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1">
+    <!--<p style="margin: 0px;display: inline-block;background: red">123123</p>-->
+    123123<br>
+    换行after也会再下面1231123
+
+</div>
+<div class="div2"></div>
+
+</body>
+</html>

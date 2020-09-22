@@ -1,7 +1,7 @@
-// a. constructor is a special function  （Person）
+// a. constructor is a special function  by new （Person）
 // 1.function's  name  Upper
 // 2.this for instance
-// 3.by new order
+// 3.by new order ***
 
 // b.new 命令 原理
 // 1.创建空对象o，作为要返回的instance
@@ -22,8 +22,16 @@ function Person(name, age) {
     this.age = age;
 }
 const B = new Person('王思雪', 20);
-console.log(B.name);
 console.log(B.age);
+
+
+
+// 1.Person.prototype 函数(类)的特性
+console.log(Person.prototype.constructor === Person); //true
+// 2.Person.__proto 浏览器 instance特性 ： 用来看  实例的  [[prototype]]原型链 关联   (Person --> function --> object)
+console.log(Person.__proto__);
+console.log(Person.__proto__.__proto__);
+
 
 // c.变量提升 hosting
 // 1.js  编译(在内存中开辟空间 存放变量/函数)  执行
@@ -31,14 +39,14 @@ console.log(B.age);
 // 2.JavaScript only hoists declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined
 // * fuction hosting
 //   1)*Function declarations hoisted，you can use the function before you declared it
-hoisted(); // logs "foo"
+/*hoisted(); // logs "foo"
 function hoisted() {
     console.log('foo');
-}
+}*/
 //   2)*note that function expressions are not hoisted
-notHoisted(); // TypeError: notHoisted is not a function
+/*notHoisted(); // TypeError: notHoisted is not a function
 var notHoisted = function() {
     console.log('bar');
-};
+};*/
 
 
