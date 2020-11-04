@@ -3,7 +3,7 @@ A simple CLI for creating your project with (vuecli3/sass/axios/elemntUI dynamic
 
 # Installation
 ```
-npm install VueFullTool-Cli -g
+npm install vue-full-tool-cli -g
 ```
 
 # Usage
