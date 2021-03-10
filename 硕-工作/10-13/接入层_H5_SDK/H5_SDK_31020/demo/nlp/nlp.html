@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <title>iFlytek Web Api</title>
+    <meta name="keywords" content="free mobile website templates, free mobile website template, free iphone template, free android template, free high end touch mobile templates, free high end touch mobile template" />
+    <meta name="description" content="Get free mobile website templates for Iphone , Android and High end touch mobile devices" />
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container-fluid mt-4 mb-4 mx-auto">
+        <div class="row m-auto">
+            <div class="col-sm-12">
+                <ul class="nav bg-dark">
+                    <a href="#" class="text-white">NLP</a>
+                </ul>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <img src="images/logo.png" class="rounded mx-auto d-block" alt="Company Logo - voicecloud.cn" />
+        </div>
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="alert alert-light" role="alert">
+                    <p class="text-center">语义</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="input-group mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text">服务URL</span>
+                    </div>
+                    <input type="text" class="form-control" id="nlp_url" value="http://10.1.138.15:10084/nlp/">
+                </div>
+                <div class="input-group mb-3">
+					<div class="input-group-append">
+                        <span class="input-group-text">输入参数</span>
+                    </div>
+                    <input type="text" class="form-control" id="nlp_params" value="username=unicom&org=1001&appid=pc20onli">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text pb-0">
+                            <label for="auth">鉴权</label>
+                            <input type="checkbox" id="auth" name="auth" class="mb-2 ml-2">
+                        </div>
+                    </div>
+                </div>
+				<div class="input-group mb-3">
+					<div class="input-group-append">
+                        <span class="input-group-text">输入文本</span>
+                    </div>
+                    <input type="text" class="form-control" content="text/html;charset=utf-8" id="nlp_text" value="你好科大讯飞">
+                </div>
+
+                <button type="button" class="btn btn-primary btn-block" id="nlp_start">获取语义结果</button>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="alert alert-light" role="alert">
+                    <p id='nlp_result' class="text-center">语义结果</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>window.jQuery || document.write('<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/nlp.dev.js" ></script>
+    <script type="text/javascript" src="./js/demo.js" ></script>
+</body>
+</html>

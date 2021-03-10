@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <title>iFlytek Web Api</title>
+    <meta name="keywords" content="free mobile website templates, free mobile website template, free iphone template, free android template, free high end touch mobile templates, free high end touch mobile template" />
+    <meta name="description" content="Get free mobile website templates for Iphone , Android and High end touch mobile devices" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container-fluid mt-4 mb-4 mx-auto">
+        <div class="row m-auto">
+            <div class="col-sm-12">
+                <ul class="nav bg-dark">
+                    <a href="#" class="text-white">IAT</a>
+                </ul>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <img src="images/logo.png" class="rounded mx-auto d-block" alt="Company Logo - voicecloud.cn" />
+        </div>
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="alert alert-light" role="alert">
+                    <p id='iat_result' class="text-center">语音听写</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="alert alert-light" role="alert">
+                    <p class="text-center">请确认麦克风可以正常使用</p>
+                    <p class="text-center">请保持网络接入畅通、稳定</p>
+                    <p class="text-center">在安静环境下使用效果更佳</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="input-group mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text">iat url</span>
+                    </div>
+                    <input type="text" class="form-control" id="iat_url" value="wss://36.7.109.47:35366/iat/">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text pb-0">
+                            <label for="auth">鉴权</label>
+                            <input type="checkbox" id="auth" name="auth" class="mb-2 ml-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="iat_params" value="appid=pc20onli&type=1&uid=660Y5r&eos=100000">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text pb-0">
+                            <label for="speex">speex压缩</label>
+                            <input type="checkbox" id="speex" name="aue" class="mb-2 ml-2">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary btn-block" id="iat_start">开始录音</button>
+                <a id="download" href="#" class="btn btn-secondary btn-block active mt-2" role="button">下载录音</a>
+                <div id="canvas_wrapper" style="transition:all 0.2s ease; display:none">
+                    <div style="display: inline">&spades;</div>
+                    <canvas id="volume" height="10" width="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        onerror=function(a,b,c){
+            alert(a+b+c);
+        }
+    </script>
+    <script>window.jQuery || document.write('<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="text/javascript" src="./js/asriat.dev.js"></script>
+    <script type="text/javascript" src="./js/demo.js"></script>
+</body>
+</html>

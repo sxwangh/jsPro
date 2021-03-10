@@ -1,0 +1,75 @@
+<!-- 原生
+  1.history.go(-1)  返回上一个路由
+  2.通过window.url变化 window监听hashChange事件 来促发渲染render方法  （#/后面的变动 即 hash的变动 不会促发浏览器重定向）
+-->
+<!-- 监听hash变化后：自定义
+  1.对不同路由路径（#后面的路径）进行截取，自定义方法来将对应的DOM render到对应的节点下
+-->
+<!--1 点击菜单：router.push(path) 从新拼接window.url  来促发window的hashChange事件-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="history.go(-1)">返回</button>
+<h2>push模式</h2>
+<ul>
+    <li onclick="Router.push('/')">首页</li>
+    <li onclick="Router.push('/news')">新闻</li>
+    <li onclick="Router.push('/product')">产品</li>
+</ul>
+<div id="app"></div>
+</body>
+<script>
+    var app = document.getElementById("app");
+
+    function RouterClass() {
+        this.routes={};
+        this.curUrl=""; //初始url
+        this.eventHashRouter();
+    }
+
+    RouterClass.prototype.route = function(path, callback) {
+        this.routes[path] = callback || function(){} // 每个路由路径绑定一个方法(相当于vueRouter中router.js中定义的路径path/component)，当window监听到
+    }
+
+    // 监听hash模式路由
+    RouterClass.prototype.eventHashRouter = function() {
+        window.addEventListener("hashchange", this.render.bind(this)) // 不绑定this的话，实例render中的this指向了window，找不到this.routes了
+    }
+
+
+    RouterClass.prototype.render = function() {
+        this.curUrl = window.location.hash.slice(1) || '/';
+        // this.curUrl  '/news' (#后面的一部分)
+        this.routes[this.curUrl]();
+    }
+
+    // push模式页面跳转
+    RouterClass.prototype.push = function(url) {
+        console.log(url);
+        url = "#" +url;
+        window.location.href = url;
+    }
+
+
+
+
+    // 实例化使用
+    var Router = new RouterClass() //初始化 使用
+
+    // 构造一个函数，根据url 改变 #app 中的内容，对页面进行渲染  （自定义路由渲染内容）
+    Router.route('/', function() {
+        app.innerHTML="首页"
+    })
+    Router.route('/news', function() {
+        app.innerHTML="新闻页面"
+    })
+    Router.route('/product', function() {
+        app.innerHTML="产品页面"
+    })
+</script>
+</html>

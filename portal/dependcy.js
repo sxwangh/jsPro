@@ -1,0 +1,63 @@
+{
+  "statusCode":0,
+  "statusMessage":"success",
+  "timeUsed":10,
+  "result":{
+  "segment":[
+    {
+      "offset":0,
+      "length":1,
+      "word":"我",
+      "pos":"rr",
+      "basicWords":[
+
+      ]
+    },
+    {
+      "offset":1,
+      "length":1,
+      "word":"爱",
+      "pos":"v",
+      "basicWords":[
+
+      ]
+    },
+    {
+      "offset":2,
+      "length":2,
+      "word":"北京",
+      "pos":"ns",
+      "basicWords":[
+
+      ]
+    },
+    {
+      "offset":4,
+      "length":3,
+      "word":"天安门",
+      "pos":"ns",
+      "basicWords":[
+
+      ]
+    }
+  ],
+    "dp":[
+    {
+      "parent":1,
+      "relation":"SBV"
+    },
+    {
+      "parent":-1,
+      "relation":"HED"
+    },
+    {
+      "parent":3,
+      "relation":"ATT"
+    },
+    {
+      "parent":1,
+      "relation":"VOB"
+    }
+  ]
+}
+}

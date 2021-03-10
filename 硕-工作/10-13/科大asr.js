@@ -1,0 +1,59 @@
+// IAT 识别 （windows/linux）
+/**
+ *初始化Session会话
+ *params.serverUrl连接的服务器地址(可选)
+ *callback回调函数定义
+ */
+varsession=new IFlyIatSession({
+  "params":{
+    "serverUrl":"wss://36.7.109.47:35366/"
+  },
+  "callback":{
+    "onResult":function(err,result,pgs,end){
+      /*若回调的err为空或错误码为0，则会话成功，可提取识别结果进行显示*/
+      if(err==null||err==undefined||err==0){
+        if(result==''||result==null){
+//iat_result.innerHTML="没有获取到识别结果";
+        }else{
+          if(pgs==1){
+//获取分段音频的最终识别结果并保存
+            pgsResult=pgsResult+result;
+            iat_result.innerHTML=pgsResult;
+          }else{
+//更新分段识别结果
+            iat_result.innerHTML=pgsResult+result;
+          }
+        }
+        /*若回调的err不为空且错误码不为0，则会话失败，可提取错误码*/
+      }else{
+        iat_result.innerHTML='errorcode:'+err+",errordescription:"+
+          result;
+      }
+    },
+    "onVolume":function(volume){},
+    "onError":function(){},
+    "onProcess":function(status){
+      switch(status){
+        case'onStart':
+          tip.innerHTML="服务初始化...";
+          break;
+        case'normalVolume':
+        case'started':
+          tip.innerHTML="倾听中...";
+          break;
+        case'onStop':
+          tip.innerHTML="等待结果...";
+          break;
+        case'onEnd':
+          tip.innerHTML=oldText;
+          pgsResult="";
+          session.kill();
+          break;
+        case'lowVolume':
+          tip.innerHTML="倾听中...(声音过小)";
+          break;
+        default:
+          tip.innerHTML=status;
+      }}
+  }
+});

@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+    nginx-asr:
+        image: nginx
+        container_name: nginx-asr
+        ports:
+            - '1990:80'
+            - '1999:443'
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ../asriat.html:/etc/asriat.html
+            - ../js:/etc/js
+            - ./ssl:/etc/nginx/https
+        restart: always

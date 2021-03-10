@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:height="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <title>iFlytek Web Api</title>
+    <meta name="keywords"
+        content="free mobile website templates, free mobile website template, free iphone template, free android template, free high end touch mobile templates, free high end touch mobile template" />
+    <meta name="description"
+        content="Get free mobile website templates for Iphone , Android and High end touch mobile devices" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid mt-4 mb-4 mx-auto">
+        <div class="row m-auto">
+            <div class="col-sm-12">
+                <ul class="nav bg-dark">
+                    <a href="#" class="text-white">TTS</a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mx-auto">
+            <img src="images/logo.png" class="rounded mx-auto d-block" alt="Company Logo - voicecloud.cn" />
+        </div>
+
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <form>
+                    <div class="form-group">
+                        <label for="tts_text">待合成文本</label>
+                        <textarea class="form-control" id="tts_text"
+                            rows="3">科大讯飞成立于1999年，是中国最大的智能化语音技术提供商，其语音核心技术代表世界最高水平。2008年科大讯飞在深圳证券交易所挂牌上市。</textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <div class="input-group mb-3">
+                    <div class="input-group-append">
+                        <span class="input-group-text">tts url</span>
+                    </div>
+                    <input type="text" class="form-control" id="tts_url" value="http://172.31.98.88:10084/tts/">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="tts_params"
+                        value="appid=test1234&vid=65600&auf=4&aue=raw&auth_id=1234567890&extend_params={&quot;params&quot;:&quot;spd=0,token=appid123,ability=ab_tts&quot;}">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text pb-0">
+                            <label for="auth">鉴权</label>
+                            <input type="checkbox" id="auth" name="auth" class="mb-2 ml-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mx-auto">
+            <div class="col-auto" style="width: 10%; padding-right: 0px;">
+                <label class="">缓冲进度</label>
+            </div>
+            <div class="col-auto" style="width: 90%; padding-left: 0px;">
+                <div class="progress mb-1" style="height: 20px;">
+                    <div class="progress-bar bg-info" id="processbar1" role="progressbar" style="width: 0%;"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mx-auto">
+            <div class="col-auto" style="width: 10%; padding-right: 0px;">
+                <label>播放进度</label>
+            </div>
+            <div class="col-auto" style="width: 90%; padding-left: 0px;">
+                <div class="progress mb-1" style="height: 20px;">
+                    <div class="progress-bar bg-info" id="processbar2" role="progressbar" style="width: 0%;"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mx-auto">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary btn-block" id="tts_start">开始播放</button>
+                <button type="button" class="btn btn-primary btn-block" id="tts_pause">暂停播放</button>
+                <button type="button" class="btn btn-primary btn-block" id="tts_resume">继续播放</button>
+                <button type="button" class="btn btn-primary btn-block" id="tts_stop">停止</button>
+                <a id="download" href="#" class="btn btn-secondary btn-block active mt-2" role="button">下载音频文件</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        onerror = function (a, b, c) {
+            alert(a + b + c);
+        }
+    </script>
+    <script>
+        window.jQuery || document.write(
+            '<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"><\/script>')
+    </script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="text/javascript" src="js/lame.min.js"></script>
+    <script type="text/javascript" src="js/tts.dev.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+</body>
+
+</html>

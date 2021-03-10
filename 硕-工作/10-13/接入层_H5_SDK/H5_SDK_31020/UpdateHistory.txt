@@ -1,0 +1,48 @@
+======================================================
+iFlyTEK Update-History file
+Product-Version:  31020
+Build:  
+Last: 
+Created-Time:   Monday, Oct 28, 2019
+======================================================
+1.修复demo问题
+======================================================
+iFlyTEK Update-History file
+Product-Version:  31018
+Build:  
+Last: 
+Created-Time:   Tuesday, Oct 15, 2019
+======================================================
+-1.优化合成demo体验
+======================================================
+iFlyTEK Update-History file
+Product-Version:  31014
+Build:  
+Last: 
+Created-Time:   Tuesday, July 23, 2019
+======================================================
+-1.解决合成SDK跨域不携带cookie问题
+======================================================
+iFlyTEK Update-History file
+Product-Version:  31008
+Build:  
+Last: 
+Created-Time:   Tuesday, April 1, 2019
+======================================================
+-1.修复合成SDK demo缺陷
+======================================================
+iFlyTEK Update-History file
+Product-Version:  31005
+Build:  
+Last: 
+Created-Time:   Monday, March 18, 2019
+======================================================
+-1.H5 识别合成语义SDK,目前支持独立鉴权或直连路由
+======================================================
+iFlyTEK Update-History file
+Product-Version:  30012
+Build:  
+Last: 
+Created-Time:   Wednesday, January 16, 2019
+======================================================
+-1.H5 识别合成SDK，目前仅支持AI+3.0
