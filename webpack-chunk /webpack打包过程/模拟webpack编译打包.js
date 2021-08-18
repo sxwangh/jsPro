@@ -6,17 +6,17 @@ const confit = {
         filename: 'wsx-js-tool.min.js',
         path: path.resolve(rootPath, 'dist'),
         // library: 'anyNameIsOk',
-        libraryTarget: 'umd', // 适用于任何形式的模块引入
-        libraryExport: 'default', // for commonjs  （不配置的话，引入需要如下：const wsxJSTool = require('wsx-ji-tool').default）
-        globalObject: 'this', // for browser and node (self is not define) , 变更打包后的文件中 默认的self为this
-        library: {
+        libraryTarget: 'umd', // 1.适用于任何形式的模块引入
+        libraryExport: 'default', // 2.for commonjs  （不配置的话，引入需要如下：const wsxJSTool = require('wsx-ji-tool').default）
+        globalObject: 'this', // 3.for browser and node (self is not define) , 变更打包后的文件中 默认的self为this
+        library: { // 4 不同模式下暴露的名字
             root: "anyNameIsOk-root",
             amd: "anyNameIsOk-amd",
             commonjs: "anyNameIsOk-common"
         },
-        umdNamedDefine: true // 该选项为true 会对amd模块进行命名，否则amd的define为匿名 => define( [], factory);
+        umdNamedDefine: true // 5.该选项为true 会对amd模块进行命名，否则amd的define为匿名 => define( [], factory);
     },
-    mode: 'none',
+    mode: 'none', // 6.打包出来比较好看，没怎么压缩
         module: {
         rules: [{
             test: /\.js$/,
