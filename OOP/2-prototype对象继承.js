@@ -12,6 +12,8 @@ let child = Object.create(old);
 child.a = 3;
 console.log(old.m());
 console.log(child.m());
+console.log(old);
+console.log(child);
 
 
 
